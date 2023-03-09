@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_kaslacidt', function (Blueprint $table) {
-            $table->string('notransaksi', 50);
-            $table->string('nama_pengambil', 50)->nullable();
-            $table->decimal('kas_keluar', 20, 3)->nullable();
-            $table->string('keterangan_p', 100)->nullable();
-            $table->string('iddetail', 200);
+        Schema::create('dummy_sales', function (Blueprint $table) {
+            $table->string('nama', 150)->primary();
         });
     }
 
@@ -29,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_kaslacidt');
+        Schema::dropIfExists('dummy_sales');
     }
 };
